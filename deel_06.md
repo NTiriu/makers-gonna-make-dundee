@@ -1,19 +1,20 @@
-# Deel 6: Wandeling toevoegen aan de kaart
+# Part 6: Adding the hiking route to the map
 
-Voor dit deel vind je hier een expliciete instructies.
+For this part, you'll find explicit instructions here.
 
-Maak in plaats daarvan gebruik van de [MapLibre GL JS documentatie](https://maplibre.org/maplibre-gl-js/docs/) en de [MapLibre Style Spec documentatie](https://maplibre.org/maplibre-style-spec/).
-
----
-
-- [ ] Voeg `wandeling.json` GeoJSON source toe en voeg een line layer toe zodat de wandeling op de kaart verschijnt.
+Instead, make use of the [MapLibre GL JS documentation](https://maplibre.org/maplibre-gl-js/docs/) and the [MapLibre Style Spec documentation](https://maplibre.org/maplibre-style-spec/).
 
 ---
 
-- [ ] Zoek in de op welke opties er allemaal zijn voor line layers. Zoek ook op wat **expressions** zijn en hoe je ze kunt gebruiken om eigenschappen te interpoleren tussen zoomniveau's.
-
-Speel met het eindresultaat totdat je tevreden bent.
+- [ ] Add `wandeling.json` GeoJSON source and add a line layer so the hiking route appears on the map.
 
 ---
 
-<img width="1381" alt="image" src="https://github.com/user-attachments/assets/088a3ee1-a829-489e-97cd-877de040f2e7" />
+- [ ] Look up what options are available for line layers. Also look up what **expressions** are and how you can use them to interpolate properties between zoom levels.
+
+Play with the end result until you're satisfied.
+
+---
+
+<img width="1381" alt="image" src="https://github.com/user-attachments/assets/088a3ee1-a829-489e-97cd-877de040f2a7" />
+

@@ -1,21 +1,22 @@
-# Deel 2: Website Deployen
+# Part 2: Deploying the Website
 
-Ook al is je website nog niet heel spannend, we gaan hem nu al online zetten!
+Even though your website isn't very exciting yet, we're going to put it online now!
 
 ---
 
-- [ ] Schakel GitHub Pages aan in de pagina met instellingen van je fork.
+- [ ] Enable GitHub Pages in the settings page of your fork.
 
 <img width="1120" alt="image" src="https://github.com/user-attachments/assets/c3334abb-ff69-4067-9099-e0f61fe7d94c" />
 
 ---
 
-- [ ] Controleer dat je website online staat.
+- [ ] Verify that your website is online.
 
-Ga naar de volgende URL:
+Go to the following URL:
 
 ```
-https://<gebruikersnaam>.github.io/maplibre-workshop-foss4gnl-2025/
+https://<username>.github.io/maplibre-workshop-foss4gnl-2025/
 ```
 
-Als het goed is zie je nu de kaart van deel 1.
+You should now see the map from part 1.
+

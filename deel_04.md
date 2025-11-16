@@ -1,22 +1,22 @@
-# Deel 4: GeoJSON wandelroute rond Wageningen voorbereiden.
+# Part 4: Preparing a GeoJSON hiking route around Wageningen
 
-Zoek een wandelroute in/rond Wageningen. Om deze straks in MapLibre te tonen hebben we de route als GeoJSON bestand nodig. 
-Er zijn meerdere mogelijkheden om daartoe te komen. Hieronder de weg die [@justb4](https://github.com/justb4/) gevolgd heeft:
+Find a hiking route in/around Wageningen. To display this on MapLibre later, we need the route as a GeoJSON file.
+There are several ways to do this. Below is the path that [@justb4](https://github.com/justb4/) followed:
 
-1. Ga naar [hiking.waymarkedtrails.org](https://hiking.waymarkedtrails.org/). Dit zijn alle wandelroutes in OSM.
-2. Linksonder in de Search box voer in "Wageningen".
-3. In resultaat verschillende routes, m.n. "Wageningen On The Move" (WOTM). Kies bijvoorbeeld (rechtsboven) de Rode Route. Je kunt de route als GPX of KML bestand downloaden, maar dan zul je zelf moeten converteren. Met de OSM "Overpass" API kun je direct GeoJSON opvragen.
-4. Rechtsboven zie je "Relation <nummer>" 
-5. Kopieër dat Relatie Nummer
-6. Ga naar de website: https://overpass-turbo.eu/#
-7. Voer daar in linker venster de volgende code in:
+1. Go to [hiking.waymarkedtrails.org](https://hiking.waymarkedtrails.org/). These are all hiking routes in OSM.
+2. In the Search box at the bottom left, enter "Wageningen".
+3. In the results, various routes, notably "Wageningen On The Move" (WOTM). Choose, for example (top right), the Red Route. You can download the route as a GPX or KML file, but then you'll have to convert it yourself. With the OSM "Overpass" API you can request GeoJSON directly.
+4. At the top right you see "Relation <number>"
+5. Copy that Relation Number
+6. Go to the website: https://overpass-turbo.eu/#
+7. Enter the following code in the left window:
 
 ```
-/* Wageningen On The Move Rood Trail */
+/* Wageningen On The Move Red Trail */
 [out:json][timeout:25];
 
 // Store the relation
-rel(<RELATIE_NUMMER>)->.rel;
+rel(<RELATION_NUMBER>)->.rel;
 
 // Get member ways and their nodes
 (
@@ -35,15 +35,15 @@ node(r.rel)->.standalone_nodes;
 out body;
 ```
 
-In `<RELATIE_NUMMER>` vul je het route OSM Relation nummer in. Klik op `Run` button.
+In `<RELATION_NUMBER>` fill in the route OSM Relation number. Click the `Run` button.
 
-8. Als gelukt is, gaan we de GeoJSON via clipboard in een nieuw bestand brengen.
+8. If successful, we're going to bring the GeoJSON into a new file via clipboard.
 
-9. Klik op `Export` en kies data 'GeoJSON' 'Copy'
-10. Ga naar de 'assets' directory. Maak nieuw bestand aan, bijv met `touch wandeling.geojson` (of via menu).
-11. Open dit lege bestand in editor. 
-12. 'Paste' de GeoJSON uit clipboard in de editor. Nu hebben we een wandelroute als GeoJSON bestand!
-13. 'Push' dit bestand net als eerder de PMTiles naar je geforkte repo: 
+9. Click on `Export` and choose data 'GeoJSON' 'Copy'
+10. Go to the 'assets' directory. Create a new file, e.g. with `touch wandeling.geojson` (or via menu).
+11. Open this empty file in the editor.
+12. 'Paste' the GeoJSON from the clipboard into the editor. Now we have a hiking route as a GeoJSON file!
+13. 'Push' this file just like earlier the PMTiles to your forked repo:
 ```
 $ git add wandeling.geojson
 $ git commit -m "Add wandeling.geojson"
@@ -51,7 +51,7 @@ $ git push
 ```
 
  > [!TIP]
->  Tip: GitHub kan ook GeoJSON weergeven. Bekijk het bestand op een achtergrondkaart via `https://github.com/<je github naam>/maplibre-workshop-foss4gnl-2025/blob/main/assets/wandeling.geojson`
+>  Tip: GitHub can also display GeoJSON. View the file on a background map via `https://github.com/<your github name>/maplibre-workshop-foss4gnl-2025/blob/main/assets/wandeling.geojson`
 
 
 

@@ -1,56 +1,56 @@
-## Deel 3: PMTiles Extract maken van Wageningen
+## Part 3: Creating a PMTiles Extract of Wageningen
 
-Voor deze workshop willen we de kaartdata zelf hosten. Een PMTiles bestand met kaartdata van de hele wereld is ongeveer 120GB. Dat is te veel om met GitHub te deployen, en we zijn helemaal niet geïnteresseerd in de hele wereld, alleen het gebied rondom Wageningen.
+For this workshop, we want to host the map data ourselves. A PMTiles file with map data of the entire world is approximately 120GB. That's too much to deploy with GitHub, and we're not interested in the entire world, only the area around Wageningen.
 
-In dit deel gaan we daarom een extract maken van het PMTiles bestand dat Protomaps ter beschikking steld.
-
----
-
-De PMTiles CLI (command line interface) is al geïnstalleerd in je ontwikkelomgeving.
-
-- [ ] Zoek de documentatie op van de PMTiles CLI, lees de documentatie van [`pmtiles extract`](https://docs.protomaps.com/pmtiles/cli#extract).
-
-Zoals je ziet heb je de bbox nodig van Wageningen.
+In this part, we're therefore going to create an extract of the PMTiles file that Protomaps makes available.
 
 ---
 
-- [ ] Zoek uit wat de bbox van Wageningen is.
+The PMTiles CLI (command line interface) is already installed in your development environment.
 
-Er zijn veel wegen die naar Rome (of Wageningen) leiden. 
+- [ ] Look up the documentation for the PMTiles CLI, read the documentation for [`pmtiles extract`](https://docs.protomaps.com/pmtiles/cli#extract).
 
-Je kunt bijvoorbeeld de [OSM relatie](https://www.openstreetmap.org/relation/418758) opzoeken en de volgende [Overpass query gebruiken](https://overpass-ultra.trailsta.sh/):
+As you can see, you need the bbox of Wageningen.
+
+---
+
+- [ ] Find out what the bbox of Wageningen is.
+
+There are many roads that lead to Rome (or Wageningen).
+
+You can, for example, look up the [OSM relation](https://www.openstreetmap.org/relation/418758) and use the following [Overpass query](https://overpass-ultra.trailsta.sh/):
 ```
 [out:json];
 rel(334228);
 out bb;
 ```
 
-Je kunt ook de website http://bboxfinder.com/ gebruiken (er is geen https), zoom naar Wageningen, zet de EPSG code op 4326 (ipv 3857), klik het vierkant icoon, teken een bbox en kopieër deze in de "lon,lat,lon,lat" volgorde.
+You can also use the website http://bboxfinder.com/ (there is no https), zoom to Wageningen, set the EPSG code to 4326 (instead of 3857), click the square icon, draw a bbox and copy it in the "lon,lat,lon,lat" order.
 
 ---
 
-- [ ] Zoek uit wat de laatste URL is van Protomaps. Ga hiervoor naar https://maps.protomaps.com/builds/
+- [ ] Find out what the latest URL is from Protomaps. Go to https://maps.protomaps.com/builds/ for this
 
 <img width="464" alt="image" src="https://github.com/user-attachments/assets/a05b37e8-7740-4de1-a177-ed84b467be55" />
 
 
 ---
 
-- [ ] In de terminal: maak een directory 'assets' en ga daarin. Maak vervolgens daar het bestand `wageningen.pmtiles`:
+- [ ] In the terminal: create a directory 'assets' and go into it. Then create the file `wageningen.pmtiles` there:
 
 ```
 mkdir assets
 cd assets
-pmtiles extract <laatste PMTiles URL> wageningen.pmtiles --minzoom=10 --maxzoom=16 --bbox=<antwoord van stap 1>
+pmtiles extract <latest PMTiles URL> wageningen.pmtiles --minzoom=10 --maxzoom=16 --bbox=<answer from step 1>
 
 pmtiles extract https://build.protomaps.com/20250629.pmtiles wageningen.pmtiles --minzoom=10 --maxzoom=16 --bbox=5.6058239,51.9364055,5.7243627,52.0007083
 ```
 
 ---
 
-- [ ] Download `wageningen.pmtiles` en inspecteer het bestand.
+- [ ] Download `wageningen.pmtiles` and inspect the file.
 
-Drag and drop je PMTiles-bestand in de [PMTiles Viewer](https://pmtiles.io/) om te controleren of het extracten gelukt is. Daartoe moet je het bestand (paar MB) even downloaden naar je computer: rechtermuis op bestand, dan `Download...`.
+Drag and drop your PMTiles file into the [PMTiles Viewer](https://pmtiles.io/) to check if the extraction was successful. To do this, you need to download the file (a few MB) to your computer: right-click on the file, then `Download...`.
 
 <img width="1483" alt="image" src="https://github.com/user-attachments/assets/47b1667a-bb28-48bf-8b01-e99a9c2cc1d8#gh-light-mode-only" />
 
@@ -58,42 +58,43 @@ Drag and drop je PMTiles-bestand in de [PMTiles Viewer](https://pmtiles.io/) om 
 
 ---
 
-- [ ] Maak een commit met `wageningen.pmtiles` en push het bestand naar je fork.
+- [ ] Make a commit with `wageningen.pmtiles` and push the file to your fork.
 
-Gebruik de UI of de commandline (altijd sneller!):
+Use the UI or the command line (always faster!):
 
 ```
-# Keer terug naar je 'home' directory vanuit assets
+# Return to your 'home' directory from assets
 cd ..
 
-# 'Stage' het bestand
+# 'Stage' the file
 git add assets/wageningen.pmtiles
 
-# 'Commit' het bestand met commentaar (-m)
+# 'Commit' the file with a message (-m)
 git commit -m "Add wageningen.pmtiles"
 
-# 'Push' het bestand
+# 'Push' the file
 git push
 ```
 
-Zodra het bestand is gepushed zou het online moeten zijn, omdat je je GitHub repository als website hebt gepubliceerd in deel 2. Dat kan soms even duren. 
+Once the file is pushed, it should be online, because you published your GitHub repository as a website in part 2. This can sometimes take a while.
 
 ---
 
-- [ ] Check of je via je browser bij het PMTiles-bestand kan dat je hebt gemaakt.
+- [ ] Check if you can access the PMTiles file you created via your browser.
 
-Ga naar https://maps.protomaps.com/ en laad de volgende URL:
+Go to https://maps.protomaps.com/ and load the following URL:
 
 ```
-https://<jouw github username>.github.io/maplibre-workshop-foss4gnl-2025/assets/wageningen.pmtiles
+https://<your github username>.github.io/maplibre-workshop-foss4gnl-2025/assets/wageningen.pmtiles
 ```
 
-Klik op 'fit bounds'. Als het goed is zie je nu het volgende:
+Click on 'fit bounds'. If everything is correct, you should now see the following:
 
 <img width="1378" alt="image" src="https://github.com/user-attachments/assets/a6b10049-f4af-4eb3-9626-7408222d8257" />
 
 ---
 
-- [ ] Sla de Protomaps basemap style in je repo.
+- [ ] Save the Protomaps basemap style in your repo.
 
-Klik nu op "Get style JSON", kopiëer de de MapLibre stijl van Protomaps Light en sla deze op als `assets/style.json`. We gaan deze in Deel 5 gebruiken. Vergeet niet een commit te maken!
+Now click on "Get style JSON", copy the MapLibre style from Protomaps Light and save it as `assets/style.json`. We're going to use this in Part 5. Don't forget to make a commit!
+

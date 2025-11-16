@@ -1,14 +1,15 @@
-# Deel 7: De kaart afmaken
+# Part 7: Finishing the map
 
-De opties zijn eindeloos voor het verder afwerken van de kaart!
+The options are endless for further finishing the map!
 
 > [!TIP]
-> Om de API van MapLibre GL JS te verkennen kan het handig zijn om TypeScript te gebruiken. Volg daarvoor [deze instructies](./typescript.md).
+> To explore the MapLibre GL JS API, it can be helpful to use TypeScript. Follow [these instructions](./typescript.md) for that.
 
 ---
 
-- [ ] Stel maximale bounds in zodat de gebruiker de kaart niet buiten Wageningen kan bewegen. Voeg ook een minimaal en maximaal zoomniveau toe.
+- [ ] Set maximum bounds so the user cannot move the map outside Wageningen. Also add a minimum and maximum zoom level.
 
 ---
 
-- [ ] Voeg verschillende een [control](https://maplibre.org/maplibre-gl-js/docs/examples/navigation/) toe aan de kaart.
+- [ ] Add various [controls](https://maplibre.org/maplibre-gl-js/docs/examples/navigation/) to the map.
+

@@ -1,17 +1,17 @@
-# Extra 1: TypeScript gebruiken
+# Extra 1: Using TypeScript
 
-TypeScript is een taal die types aan JavaScript toevoegt. Hierdoor kan je fouten tijdens het ontwikkelen makkelijk spotten, in plaats van dat je hier pas tijdens het draaien van je programma achter komt. TypeScript is ook handig, omdat je editor of IDE je betere suggesties kan geven zoals welke methoden beschikbaar zijn op een object.
+TypeScript is a language that adds types to JavaScript. This allows you to easily spot errors during development, instead of only discovering them when running your program. TypeScript is also useful because your editor or IDE can give you better suggestions such as which methods are available on an object.
 
-Omdat browsers geen ondersteuning voor TypeScript hebben moet je TypeScript transpileren naar JavaScript voordat je het in de browser kunt gebruiken. Een build-stap voegt extra complexiteit toe aan een webproject. Voor grotere projecten is dit meestal geen probleem, en zelfs gewenst. Maar voor kleinere projecten is het vaak niet nodig. Het leuke is dat TypeScript (de compiler) ook handig is bij JavaScript codebases!
+Because browsers don't have support for TypeScript, you need to transpile TypeScript to JavaScript before you can use it in the browser. A build step adds extra complexity to a web project. For larger projects this is usually not a problem, and even desired. But for smaller projects it's often not necessary. The nice thing is that TypeScript (the compiler) is also useful for JavaScript codebases!
 
-Draai de volgende commands in de terminal:
+Run the following commands in the terminal:
 
 ```
 npm install typescript
 npm install maplibre-gl pmtiles
 ```
 
-Maak een `jsconfig.json` bestand:
+Create a `jsconfig.json` file:
 
 ```json
 {
@@ -28,18 +28,19 @@ Maak een `jsconfig.json` bestand:
 }
 ```
 
-Installeer the TypeScript plugin:
+Install the TypeScript plugin:
 
 <img width="356" alt="image" src="https://github.com/user-attachments/assets/095e6b31-ab69-4249-afeb-485e7eb73cc0" />
 
-Vervolgens kan je gebruik maken van auto-completion dankzij TypeScript:
+You can then make use of auto-completion thanks to TypeScript:
 
-<img width="541" alt="Screenshot 2025-07-01 at 19 41 08" src="https://github.com/user-attachments/assets/70b29e98-8340-4dc7-abbb-c72c4fcdfb72" />
+<img width="541" alt="Screenshot 2025-07-01 at 19 41 08" src="https://github.com/user-attachments/assets/70b29e98-8340-4dc7-abbb-c72c3fcdfb72" />
 
-Tot slot is het handig om een `.gitignore` bestand aan te maken met
+Finally, it's useful to create a `.gitignore` file with
 
 ```
 node_modules
 ```
 
-Zodat je de geïnstalleerde npm packages niet per ongeluk toevoegd aan je repository.
+So that you don't accidentally add the installed npm packages to your repository.
+

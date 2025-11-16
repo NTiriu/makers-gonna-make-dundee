@@ -1,18 +1,18 @@
-# Extra 2: Protomaps Assets Zelf Hosten
+# Extra 2: Self-Hosting Protomaps Assets
 
-MapLibre heeft naast (vector)data verder nog nodig:
+MapLibre needs, in addition to (vector) data:
 
-- Lettertypes (fonts) in een specifiek formaat
-- Sprites voor icoontjes
+- Fonts in a specific format
+- Sprites for icons
 
-Deze assets zijn specifiek per stijl en je voegt ze respectievelijk toe met het `glphys` en `sprite` property in een MapLibre style JSON document.
+These assets are specific per style and you add them respectively with the `glyphs` and `sprite` property in a MapLibre style JSON document.
 
 > [!TIP]
-> Voor meer informatie zie de [Protomaps Documentatie](https://docs.protomaps.com/basemaps/maplibre#assets).
+> For more information see the [Protomaps Documentation](https://docs.protomaps.com/basemaps/maplibre#assets).
 
-Om je kaart echt onafhankelijk te maken van externe bronnen zul je deze assets ook zelf moeten hosten.
+To make your map truly independent of external sources, you'll also need to host these assets yourself.
 
-Gebruik de volgende commands om de [basemap-assets](https://github.com/protomaps/basemaps-assets)  van Protomaps aan je repository toe te voegen.
+Use the following commands to add the [basemap-assets](https://github.com/protomaps/basemaps-assets) from Protomaps to your repository.
 
 ```sh
 cd assets
@@ -23,4 +23,5 @@ rm main.zip
 rmdir basemaps-assets-main
 ```
 
-Update vervolgens `glyphs` en `sprite` in je `assets/style.json` document en verwijs naar de self-hosted assets.
+Then update `glyphs` and `sprite` in your `assets/style.json` document and reference the self-hosted assets.
+

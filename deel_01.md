@@ -1,93 +1,93 @@
-# Deel 1: Ontwikkelomgeving opzetten
+# Part 1: Setting up the development environment
 
-- [ ] Maak een fork van [de repository](https://github.com/louwers/maplibre-workshop-foss4gnl-2025).
+- [ ] Fork [the repository](https://github.com/louwers/maplibre-workshop-foss4gnl-2025).
 
 ---
 
-- [ ] Start een GitHub Codespace.
+- [ ] Start a GitHub Codespace.
 
 <img width="419" alt="image" src="https://github.com/user-attachments/assets/a60f0ca1-60ab-403e-915d-13d0fe115d70" />
 
 ---
 
-- [ ] Open de Terminal als de Codespace geladen is. Gebruik het menu als het niet automatisch opent.
+- [ ] Open the Terminal when the Codespace has loaded. Use the menu if it doesn't open automatically.
 
 <img width="479" alt="image" src="https://github.com/user-attachments/assets/cf0cfeec-63df-4a73-8128-94c9cf3aceb5" />
 
 ---
 
-- [ ] Gebruik de terminal om een web server te starten met Python. Gebruik het volgende commando:
+- [ ] Use the terminal to start a web server with Python. Use the following command:
 
 ```
 python3 -m http.server
 ```
 
-Nu start een web server op poort 8000.
+A web server will now start on port 8000.
 
 ---
 
-- [ ] Zorg dat je via je browser bij de web server kan.
+- [ ] Make sure you can access the web server via your browser.
 
-Als het goed is krijg je een popup. Klik op 'Open in Browser':
+You should get a popup. Click on 'Open in Browser':
 
 <img width="449" alt="image" src="https://github.com/user-attachments/assets/4e018397-f623-4683-9ecc-dc103c72a2a8" />
 
-Als je geen popup krijgt, ga naar de 'PORTS' tab en zorg dat je bij poort 8000 kan.
+If you don't get a popup, go to the 'PORTS' tab and make sure you can access port 8000.
 
 <img width="1385" alt="image" src="https://github.com/user-attachments/assets/b64abb4c-19df-4b8f-8744-863e53d3fa29" />
 
-Ga naar de URL die je getoond krijgt. Als het goed is zie je nu een lijst bestanden. Dan weet je dat de web server goed werkt:
+Go to the URL that is shown. You should now see a file list. This confirms that the web server is working correctly:
 
 <img width="359" alt="image" src="https://github.com/user-attachments/assets/c045be80-5268-48b6-bdb1-17921d411706" />
 
 ---
 
-We gaan nu echt beginnen met web development.
+Now we're really going to start with web development.
 
-- [ ] Maak een `index.html` bestand. Dit kun je het makkelijkste doen via de sidebar.
+- [ ] Create an `index.html` file. The easiest way to do this is via the sidebar.
 
 <img width="229" alt="image" src="https://github.com/user-attachments/assets/bb27c50f-9afc-42e5-b608-7bbbdefd1776" />
 
-Gebruik de volgende inhoud en sla het bestand op.
+Use the following content and save the file.
 ```html
 <!doctype html>
 <html>
   <head>
-    <title>Mijn titel</title>
+    <title>My title</title>
   </head>
   <body>
-    <p>Hallo wereld!</p>
+    <p>Hello world!</p>
   </body>
 </html>
 ```
 
-Als je de pagina in de browser ververst zou je "Hallo wereld!" moeten zien.
+If you refresh the page in the browser, you should see "Hello world!".
 
 ---
 
-- [ ] Maak een `main.js` bestand en laad deze in `index.html` door de volgende lijn toe te voegen aan de `head`:
+- [ ] Create a `main.js` file and load it in `index.html` by adding the following line to the `head`:
 
 ```html
 <script type="module" src="main.js"></script>
 ```
 
-Schrijf dit in je `main.js` bestand:
+Write this in your `main.js` file:
 
 ```js
-console.log("Ook hallo wereld vanaf Javascript!");
+console.log("Also hello world from Javascript!");
 ```
 
-Open de developer console in je browser. Waar dit precies moet verschilt per browser.
+Open the developer console in your browser. Where this appears exactly varies by browser.
 
-Als je dit ziet, dan heb je succesvol je web development omgeving opgezet!
+If you see this, then you have successfully set up your web development environment!
 
 <img width="988" alt="image" src="https://github.com/user-attachments/assets/cddcb40a-1c7b-4953-a9f9-a5e7cce37923" />
 
 ---
 
-Nu is het tijd om MapLibre GL JS toe te voegen. 
+Now it's time to add MapLibre GL JS.
 
-- [ ] Voeg eerst een `div` toe aan de HTML in de `body` tag:
+- [ ] First add a `div` to the HTML in the `body` tag:
 
 ```html
     <div id="mijnkaart"></div>
@@ -95,9 +95,9 @@ Nu is het tijd om MapLibre GL JS toe te voegen.
 
 ---
 
-Vervolgens gaan we de JavaScript bundle laden vanaf CDN.
+Next, we're going to load the JavaScript bundle from CDN.
 
-- [ ] Update `main.js` met de volgende code:
+- [ ] Update `main.js` with the following code:
 
 ```
 import * as maplibregl from "https://cdn.skypack.dev/maplibre-gl";
@@ -110,15 +110,15 @@ const map = new maplibregl.Map({
 });
 ```
 
-Dit vertelt MapLibre door een kaart te laden in het element met id `map` en we laden een simpele MapLibre stijl genaamd Demotiles.
+This tells MapLibre to load a map in the element with id `map` and we load a simple MapLibre style called Demotiles.
 
-Sla alle bestanden op, zie je al een kaart verschijnen in de browser?
+Save all files, do you see a map appearing in the browser?
 
 ---
 
-We voegen nu nog wat CSS toe aan de pagina, MapLibre wordt gebundeld met wat CSS code die het nodig heeft voor UI elementen. Ook zorgen we dat de kaart het hele scherm in beslag neemt door het `100 vw` (view width) breed en `100 vh` (view height) hoog te maken.
+We're now adding some CSS to the page. MapLibre comes bundled with some CSS code it needs for UI elements. We also make sure the map takes up the entire screen by making it `100 vw` (view width) wide and `100 vh` (view height) tall.
 
-- [ ] Voeg de volgende code toe aan de `head` van `index.html`:
+- [ ] Add the following code to the `head` of `index.html`:
 
 ```html
 <style>
@@ -137,16 +137,16 @@ We voegen nu nog wat CSS toe aan de pagina, MapLibre wordt gebundeld met wat CSS
 
 ---
 
-Als het goed is zie je nu het volgende eindresultaat
+If everything is correct, you should now see the following end result
 
 <img width="1296" alt="image" src="https://github.com/user-attachments/assets/ed301d95-2f55-4617-a525-a51b25b7fa7e" />
 
 > [!TIP]
-> Voor de enthousiastelingen, probeer een stijl van [OpenFreeMap](https://openfreemap.org/quick_start/).
+> For the enthusiasts, try a style from [OpenFreeMap](https://openfreemap.org/quick_start/).
 
 ---
 
-- [ ] Zorg dat je `index.html` en `main.js` commit en pushed naar de repo. Je kan hiervoor `git` in de command line gebruiken of de UI.
+- [ ] Make sure you commit and push `index.html` and `main.js` to the repo. You can use `git` in the command line or the UI for this.
 
 https://github.com/user-attachments/assets/79d99706-0daf-4c27-98e9-39bd2f4bbd26
 
